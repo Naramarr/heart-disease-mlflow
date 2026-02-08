@@ -1,4 +1,4 @@
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -19,13 +19,13 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 X_train,X_test,y_train,y_test = train_test_split(X_scaled,y,random_state=43, test_size=0.2)
 
-log = LogisticRegression()
-log.fit(X_train, y_train)
+rf = RandomForestClassifier(n_estimators=80)
+rf.fit(X_train, y_train)
 
-y_pred = log.predict(X_test)
+y_pred = rf.predict(X_test)
 
 acc = accuracy_score(y_test,y_pred)
 
 print("report of both acc and roc are ",acc)
 
-joblib.dump(log,"model.pkl")
+joblib.dump(rf,"model.pkl")
