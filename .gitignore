@@ -1,5 +1,17 @@
-mlruns/
+# Python
 __pycache__/
 *.pyc
-model.pkl
-heart.csv
+
+# Virtual environment
+venv/
+
+# ML artifacts
+artifacts/
+mlruns/
+
+# Data files (optional if large)
+data/*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
