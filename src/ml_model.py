@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-df = pd.read_csv("heart.csv")
+df = pd.read_csv("data/heart.csv")
 
 df.dropna(inplace= True)
 df.drop_duplicates(inplace=True)
