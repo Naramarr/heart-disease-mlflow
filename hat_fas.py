@@ -53,3 +53,20 @@ def batch_predict(data: List[Features]):
     except Exception as e:
         logger.error(f"Prediction error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+notes = []
+
+@app.post("/add_note")
+
+def adding_notes(word:str):
+    notes.append(word)
+    return {
+        "status":"Notes added successfully",
+        "item":notes
+    }
+
+
+
+
+
+
+
