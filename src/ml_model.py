@@ -25,7 +25,9 @@ dec.fit(X_train, y_train)
 y_pred = dec.predict(X_test)
 
 acc = accuracy_score(y_test,y_pred)
+roc = roc_auc_score(y_test,y_pred)
 
-print("report of both acc and roc are ",acc)
+print("report of both acc:",acc)
+print('report of roc only:', roc)
 
 joblib.dump(dec,"model.pkl")
